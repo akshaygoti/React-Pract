@@ -5,7 +5,6 @@ import "./index.css"
 
 import {Pera1,Pera2,Pera3,Pera4,Pera5,Pera6} from "./Components/Pera.js"
 
-
 import Img from "./Components/Img.js";
 
 
