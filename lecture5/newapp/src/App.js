@@ -1,15 +1,15 @@
-import "./App.css";
-import "./index.css";
-
-import Task from "./Component/Task.js";
-
+// import logo from './logo.svg';
+import './App.css';
+import ComA from './Component/ComA';
 
 function App() {
-  return <>
-   <div className="App"> 
-       <Task/>
+  return (
+    <div className="App">
+      <>
+        <ComA/>
+      </>
     </div>
-  </>
+  );
 }
 
 export default App;
