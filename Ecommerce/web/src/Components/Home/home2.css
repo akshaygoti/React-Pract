@@ -1,0 +1,10 @@
+.section .floded-img .floded0{ 
+    height: 300px;
+}
+
+.hl {
+    margin-top: 20px;
+    width: 300px;
+    border: 2px solid red;
+    border-radius: 10px;
+}

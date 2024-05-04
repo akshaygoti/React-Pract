@@ -1,0 +1,25 @@
+.container {
+    position: relative;
+    text-align: center;
+    color: black;
+  }
+
+  .bgimg{
+    height: 190px;
+    width: 100%;
+  }
+
+  /* .error-main.btn-error .fa-solid .button:hover{
+    color: black;
+  } */
+  
+  .top-left {
+    position: absolute;
+    top: 20px;
+    left: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .error-sq{
+    color: gray ;
+  }

@@ -1,0 +1,37 @@
+/* footer */
+
+.footer-part{
+    background-color: #f8f8f8;
+}
+
+.footer-ul ul li a i{
+    width: 40px;
+    font-size: 18px;
+}
+
+.text-underline{
+    text-decoration: underline;
+}
+
+.footer-ul ul li{
+    margin-bottom: 10px;
+}
+
+/* .footer-ul ul li a  :hover{
+    color: rgb(222, 70, 70);
+} */
+
+
+.footer-ul ul li :hover{
+    color: 
+    #ff0000ce;
+}
+
+.sub-now{
+    color: white;
+    background-color: #D51243;
+}
+
+/* .footer-end{
+    background-color: #EDEDED;
+}  */

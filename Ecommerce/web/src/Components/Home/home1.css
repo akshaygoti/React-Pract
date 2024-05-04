@@ -1,0 +1,32 @@
+/* .cat01:hover .catimg:hover .img:hover .cath:hover{
+    color: #c82b45;
+} */
+
+.card .cat01 .catimg .cath:hover {
+    font-size: 20px;
+    background-color: #D61747;
+    color: white;
+}
+
+.vl {
+    border-right: 2px solid #ECF0EF;
+    height: 160px;
+}
+
+.catimg{
+    background-color: rgb(251,251,251);
+}
+
+.hr{
+    border: 2px solid #ECF0EF;
+}
+
+.all{
+    color: #D61747;
+    text-decoration: underline;
+}
+
+.card-img img{
+    width: 280px;
+    height: 320px;
+}

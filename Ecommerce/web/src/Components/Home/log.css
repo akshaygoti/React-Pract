@@ -1,0 +1,57 @@
+.log-button{
+    background-color: rgb(196, 28, 56);
+    border-radius: 6px;
+    /* color: var(--tp-common-white); */
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    /* line-height: 1; */
+    margin-bottom: 0;
+    padding: 20px 50px;
+    text-align: center;
+    touch-action: manipulation;
+    transition: all .3s ease 0s;
+    vertical-align: middle;
+    /* white-space: nowrap; */
+    width: 80%;
+    color: white;
+}
+
+
+.log-card1{
+    background-color: #F6F6F6;
+}
+
+.log-button2 {
+    /* background-color: #F3EEE7; */
+    background-color: black;
+    border-radius: 6px;
+    /* color: var(--tp-common-white); */
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    /* line-height: 1; */
+    margin-bottom: 0;
+    padding: 20px 50px;
+    text-align: center;
+    touch-action: manipulation;
+    transition: all .3s ease 0s;
+    vertical-align: middle;
+    /* white-space: nowrap; */
+    width: 80%;
+    color: white;
+}
+
+@media (max-width:768px){
+    .main-card{
+        display: block;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width:425px){
+    /* .main-card{ */
+        /* width: 80%; */
+        /* display: block; */
+    /* } */
+}

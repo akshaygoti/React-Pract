@@ -1,16 +1,17 @@
 import React from 'react'
-import exam from './asset/exam0-img.jpeg'
+import exam0 from './asset/exam0-img.jpeg'
 import exam1 from './asset/exam1.jpeg'
 import exam2 from './asset/exam2.jpeg'
 
 function Menu(props) {
   return (
     <>
+
     <h1>This is menu page</h1>
     <div className=' flex mt-2 justify-between items-center py-5 pl-5 pr-5'>
 
       <div class="max-w-sm rounded overflow-hidden shadow-lg  w-64 h-[50%]">
-        <img  src={exam} alt="Sunset in the mountains"/>
+        <img  src={exam0} alt="Sunset in the mountains"/>
         <div class="px-6 py-4">
           <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
           <p class="text-gray-700 text-base">
@@ -57,6 +58,7 @@ function Menu(props) {
         </div>
       </div>
     </div>
+    
     </>
       
   )

@@ -1,0 +1,43 @@
+
+.about-text .ul .li .a{
+    font-size: 16px;
+    font-weight: 400;
+    display: block;
+    color: rgb(176, 171, 171);
+    line-height: 26px;
+}
+
+.Support-btn{
+    display: block;
+    font-weight: 600;
+    font-size: 16px;
+    border: 1px solid var(--tp-border-1);
+    border-radius: 6px;
+    padding: 16px 8px;
+    text-align: center;
+    transition: all .3s ease-out 0s;
+    margin-bottom: 10px;
+}
+
+/* .border-2.Support-btn:hover{
+    background-color: #D51243;
+} */
+
+.fullname{
+    height: 60px;
+    width: 100%;
+    padding: 5px 20px;
+    border: 1px solid var(--tp-border-1);
+    border-radius: 6px;
+}
+
+.tp-btn {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 17px 33px;
+    border-radius: 6px;
+    color: white;
+    background-color: #D51243;
+    line-height: 1.2;
+}
