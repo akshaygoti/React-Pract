@@ -2,8 +2,23 @@ import React from 'react'
 import logo from '../asset/logo.png'
 import photos from '../asset/photo.jpg'
 import '../Header/header.css'
+import { AiOutlineShoppingCart } from "react-icons/ai";
+import { FaRegUser } from "react-icons/fa";
+import { CiHeart } from "react-icons/ci";
+
+import { Link, useNavigate } from 'react-router-dom'
+
+import { useSelector } from "react-redux"
 
 const Header = () => {
+  const navigate = useNavigate();
+
+  const data = useSelector((state) => state.cartreducer.carts)
+  // console.log(data, "data");
+
+  const data2 = useSelector((state) => state.cartreducer.Wishlist)
+  // console.log(data2, "data2");
+
   return (
     <>
 
@@ -36,7 +51,7 @@ const Header = () => {
                 <img src={photos} alt="" className='mr-2 ' />
                 English
                 <i class="fa-solid fa-angle-down "></i>
-                </button>
+              </button>
               <div class="dropdown0-content">
                 <a href="#">Arabic </a>
                 <a href="#">Spanish</a>
@@ -44,7 +59,6 @@ const Header = () => {
               </div>
             </div>
 
-        
 
             <div className='btn-2 p-2.5 border-2 border-gray-500 ml-2'>
               <select name="border" id="" className='  '>
@@ -54,25 +68,29 @@ const Header = () => {
               </select>
             </div>
 
-            <div className='icons flex'>
-              <button className='icon01 text-xl relative mx-3'>
-                <i class="fa-solid fa-cart-shopping"></i>
 
+            <div className='icons flex'>
+
+              <button onClick={() => navigate("/Cart")} className='icon01 text-xl  mx-3'>
+                {/* <i class="fa-solid fa-cart-shopping"></i> */}
+                <AiOutlineShoppingCart onClick={()=>navigate("/Cart")} className='h-10 w-7' />
+                <span className='red0'>{data.length}</span>
               </button>
-              <button className='icon02 text-xl mx-3'>
-                <i class="fa-regular fa-user"></i>
+              <button  className='icon01 text-xl  mx-3'>
+                {/* <i class="fa-regular fa-user"></i> */}
+                <FaRegUser />
               </button>
-              <button className='icon03 text-xl relative mx-3'>
-                <i class="fa-regular fa-heart"></i>
+              <button className='icon01 text-xl  mx-3'>
+                {/* <i class="fa-regular fa-heart"></i> */}
+                <CiHeart onClick={() => navigate("/Wishlist")} className='h-10 w-7' />
+                <span className='red0'>{data2.length}</span>
               </button>
+
             </div>
           </div>
         </div>
 
-
-
       </header>
-
 
     </>
 

@@ -1,10 +1,84 @@
-.section .floded-img .floded0{ 
-    height: 300px;
+.img-flod{
+    position: relative;
 }
 
-.hl {
-    margin-top: 20px;
-    width: 300px;
-    border: 2px solid red;
+.offer-price{
+    width: 85px;
+    height: 85px;
+    padding-top: 6px;
+    text-align: center;
+    position: absolute;
+    top: 10px;
+    left: 7rem;
+    background-color: #d51243;
+    color: white;
+    border-radius: 50px;
+    animation: hotdeal 2s linear infinite;
+}
+
+.progress{
+    width: 107%;
+    height: 6px;
     border-radius: 10px;
+    background-color: #ffff;
+}
+
+.progress-bar{
+    width: 68%;
+    border-radius: 10px;
+    background-color: #d51243;
+    border: 3px solid #d51243;  
+}
+
+.main-down{
+    width: 20%;
+    height: 5rem;
+    text-align: center;
+    margin: 0px 5px;
+    border-radius: 5px;
+}
+
+.main-down h1{
+    font-size: 30px;
+    font-weight: 700;
+}
+
+@keyframes hotdeal{
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: .6;
+    }
+    75%{
+        opacity: .8;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@media (max-width:1440px) {
+    .img-flod{
+        margin-right: 20px;
+    }
+}
+
+@media (max-width:1024px) {
+    
+}
+
+@media (max-width:768px) {
+    
+}
+
+@media (max-width:576px) {
+    .countdown{
+        flex-wrap: wrap;  
+    }
+    .main-down{
+        width: 35%;
+        margin-bottom: 10px;
+        display: grid;
+    }
 }

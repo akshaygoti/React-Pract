@@ -1,50 +1,81 @@
 // import './App.css';
 
-import Contact from "./Components/Home/Contact";
-
-import Error from "./Components/Home/Error";
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 // header faile link
 import Header from "./Components/Header/Header";
 
-// Categories faile link
-import Categories from "./Components/Home/Categories";
-
 // footer faile link
 import Footer from "./Components/Footer/Footer";
 
-// home faile link
-import Home from "./Components/Home/Home";
-
-// home1 faile link
-import Home1 from "./Components/Home/Home1"
-
-// home3 faile link
-import Home3 from "./Components/Home/Home3";
-
-// home2 faile link
-import Home2 from "./Components/Home/Home2";
-
 import Header2 from "./Components/Header/Header2";
 
+import Wishlist from "./Components/Home/Wishlist";
+
+import Homepage from "./Components/Pages/Homepages/Homepage";
+
 import Log from "./Components/Home/Log";
+
+import Sign from "./Components/Home/Sign"
+
+import ShopDetails from "./Components/Home/ShopDetails";
+
+import Contact from "./Components/Home/Contact";
+
+import About from "./Components/Home/About";
+
+import Blog from "./Components/Home/Blog";
+
+import Cart from "./Components/Home/Cart";
+
+import Error from "./Components/Home/Error";
+
+import Shope from "./Components/Home/Shope";
+
+import Shop2 from "./Components/Home/Shop2";
+
+import ShopDetails2 from "./Components/Home/ShopDetails2";
+
+// redux
+import { Provider } from "react-redux";
+import Store  from "./Store"
 
 
 function App() {
   return (
 
+    <>
     <div className="App">
-        {/* <Header/> 
-        <Header2/>
-        <Home/> */}
-        <Home1/>
-        {/* <Home2/> */}
-        {/* <Home3/> */}
-        {/* <Log/> */}
-        {/* <Footer/>  */}
-        {/* <Error/> */}
-        {/* <Contact/> */}
+    
+    <Provider store={Store}>
+
+      <BrowserRouter>
+        <Header />
+        <Header2 />
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/Log" element={<Log />} />
+          <Route path="/Sign" element={<Sign />} />
+          <Route path="/Contact" element={<Contact/>}/>
+          <Route path="/ShopDetails" element={<ShopDetails/>}/>
+          <Route path="/Wishlist" element={<Wishlist />} />
+          <Route path="/About" element={<About/>}></Route>
+          <Route path="/Blog" element={<Blog/>}></Route>
+          <Route path="/Cart" element={<Cart/>}></Route>
+          <Route path="/Error" element={<Error/>}></Route>
+          <Route path="/Shope" element={<Shope/>}></Route>
+          <Route path="/Shop2" element={<Shop2/>}></Route>
+          <Route path="/ShopDetails2" element={<ShopDetails2/>}></Route>
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+
+      </Provider>
+
     </div>
+
+    </>
+
 
   );
 }

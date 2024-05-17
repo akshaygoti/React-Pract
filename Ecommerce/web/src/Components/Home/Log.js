@@ -1,4 +1,9 @@
-import React from 'react'
+// import React from 'react'
+
+import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react'
+import Swal from 'sweetalert2'
+import '../Home/log.css'
 
 import bgimg from '../asset/breadcrumb-01.jpg'
 
@@ -14,9 +19,45 @@ import { PiBagSimpleFill } from "react-icons/pi";
 import { MdOutlineEmail } from "react-icons/md";
 import { LuShoppingBag } from "react-icons/lu";
 
-import '../Home/log.css'
 
 function Log() {
+    const navigate = useNavigate();
+    const [email, setEmail] = useState("");
+    const [pw, setPw] = useState("")
+
+    const getEmail = localStorage.getItem("Email");
+    const getPw = localStorage.getItem("Password");
+
+    function onSubmitFun(e) {
+        e.preventDefault();  //interview
+        if (!email && !pw) {
+            alert("plz fill all field")
+        } else {
+            alert("succesfully register user")
+            localStorage.setItem("Email", email);
+            localStorage.setItem("password", pw)
+            navigate("/")
+        }
+    }
+
+    function onSubmitLogin(e) {
+        e.preventDefault();
+        if (!email && !pw) {
+            alert("plz fill all field")
+        } else if (email !== getEmail && pw !== getPw) {
+            alert("plz fill currect details")
+        }
+        else {
+            alert("succesfully login user")
+        }
+    }
+    const alert = () => {
+        Swal.fire({
+            title: "Good job!",
+            text: "You clicked the button!",
+            icon: "success"
+        });
+    }
     return (
 
         <>
@@ -32,7 +73,7 @@ function Log() {
                         <span>
                             <a href="#" className='ml-2 text-gray-500'>Sign In</a>
                         </span>
-                        <h2 className='text-3xl  font-semibold'>Sign In</h2>
+                        <h2 className='text-3xl  font-semibold'>Log In</h2>
                     </div>
                 </div>
             </div>
@@ -43,7 +84,8 @@ function Log() {
 
             {/* log card 1 */}
             
-        <div className='main-card2 mt-5 flex log-card1'>
+        <div className='main-card2 mt-5 flex log-card1' >
+            <form action="" onSubmit={onSubmitFun}>
             <div className=''>
             <div className='cart- '>
                 <div className='main-img'>
@@ -68,7 +110,7 @@ function Log() {
                     <span className='absolute pt-3 pl-2'>
                     <FaRegUser />
                     </span>
-                    <input placeholder="Username / email address" type="email" className='w-[100%] h-10 pl-11 items-center'></input>
+                    <input placeholder="Username / email address"  type="email" onChange={(e) => setEmail(e.target.value)}  className='w-[100%] h-10 pl-11 items-center'></input>
                 </form>
             </div>
 
@@ -77,7 +119,7 @@ function Log() {
                     <span className='absolute pt-4 pl-2'>
                     <FaKey />
                     </span>
-                    <input placeholder="Password" type="email" className='w-[100%] h-10 pl-11 items-center'></input>
+                    <input placeholder="Password" type="email" onChange={(e) => setEmail(e.target.value)}  className='w-[100%] h-10 pl-11 items-center'></input>
                 </form>
             </div>
             <div className='flex items-center justify-between px-20'>
@@ -90,7 +132,7 @@ function Log() {
                 </div>
             </div>
             <div className='cat-btn flex mt-2 justify-center'>
-                <button className='log-button'>
+                <button className='log-button' onClick={alert}>
                     Login Now 
                     <i class="fa-solid fa-arrow-right ml-5"></i>
                     {/* <FaArrowRight /> */}
@@ -98,12 +140,14 @@ function Log() {
             </div>
             </div>
             </div>
+            </form>
         </div>
 
                {/* log card 2 */}
 
                <div className='mt-5 flex log-card1'>
-            <div className=''>
+                <form action="" onSubmit={onSubmitFun}>
+            <div className='' >
             <div className='cart- '>
                 <div className='main-img'>
                     <img src={logbg2} alt="" className='rounded-t-lg'/>
@@ -127,7 +171,7 @@ function Log() {
                     <span className='absolute pt-3 pl-2'>
                     <MdOutlineEmail />
                     </span>
-                    <input placeholder="Email address" type="email" className='w-[100%] h-10 pl-11 items-center'></input>
+                    <input placeholder="Email address" type="email"  onChange={(e) => setEmail(e.target.value)}  className='w-[100%] h-10 pl-11 items-center'></input>
                 </form>
             </div>
 
@@ -136,7 +180,7 @@ function Log() {
                     <span className='absolute pt-4 pl-2'>
                     <FaKey />
                     </span>
-                    <input placeholder="Password" type="email" className='w-[100%] h-10 pl-11 items-center'></input>
+                    <input placeholder="Password" type="email"  onChange={(e) => setEmail(e.target.value)}  className='w-[100%] h-10 pl-11 items-center'></input>
                 </form>
             </div>
             <div className='flex items-center justify-between px-20'>
@@ -149,7 +193,7 @@ function Log() {
                 </div>
             </div>
             <div className='cat-btn flex mt-2 justify-center '>
-                <button className='log-button2 '>
+                <button className='log-button2 ' onClick={alert}>
                     Login Now 
                     <i class="fa-solid fa-arrow-right ml-5"></i>
                     {/* <FaArrowRight /> */}
@@ -157,6 +201,7 @@ function Log() {
             </div>
             </div>
             </div>
+        </form>
         </div>
 
       

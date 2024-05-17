@@ -30,3 +30,15 @@
     width: 280px;
     height: 320px;
 }
+/* 
+@media (max-width:576px) {
+    .card .cat01{
+        flex-wrap: wrap;
+    }
+} */
+
+@media (max-width:768px) {
+     .catimg{
+        flex-wrap: wrap;
+    }
+}

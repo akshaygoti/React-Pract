@@ -39,6 +39,22 @@
       text-decoration: none;
       display: block;
     }
+
+    .trans{
+      background-color: #FFFFFF;
+      width: 100%;
+      border: 2px solid black;
+      border-top: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      border-radius: 0 0 6px 6px;
+      z-index: 9;
+    }
+
+    .trantwo{
+      padding: 10px 0;
+    }
 /*   
     .dropdown-content .ul .li{
       line-height: 0%;

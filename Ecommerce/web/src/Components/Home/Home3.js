@@ -28,16 +28,12 @@ function Home3() {
 
   <div className='main-home3 w-[90%] mx-auto py-5'>
 
-    {/* {/* <div className='text-center'>
+     <div className='text-center'>
           <h2 className='ontext'>Follow On</h2>
           <div>
             <p className='text-3xl font-bold flex items-center justify-center'><i class="fa-brands fa-instagram mr-2 text-4xl "></i>ninico-shopp</p>
           </div>
-          {/* <h4 className='text-4xl text-center'>
-          <i class="fa-brands fa-instagram "></i>
-             ninico-shopp
-          </h4> */}
-      {/* </div> */}
+      </div>
 
       <Swiper
         slidesPerView={1}
