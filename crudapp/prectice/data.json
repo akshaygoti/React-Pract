@@ -1,0 +1,46 @@
+{
+  "people": [
+    {
+      "id": "3f84",
+      "firstname": "Avish",
+      "lastname": "Yadav",
+      "age": "26",
+      "city": "Delhi"
+    },
+    {
+      "id": "41d2",
+      "firstname": "Akshay",
+      "lastname": "Goti",
+      "age": "19",
+      "city": "Gujarat"
+    },
+    {
+      "id": "7286",
+      "firstname": "Sahil",
+      "lastname": "Dughat",
+      "age": "23",
+      "city": "USA"
+    },
+    {
+      "id": "3e44",
+      "firstname": "Smit",
+      "lastname": "Kareliya",
+      "age": "19",
+      "city": "Mlicom"
+    },
+    {
+      "id": "3c6e",
+      "firstname": "Jayan",
+      "lastname": "Chikago",
+      "age": "25",
+      "city": "Syamgham"
+    },
+    {
+      "id": "1597",
+      "firstname": "Nikhil",
+      "lastname": "Ahir",
+      "age": "26",
+      "city": "Mumbai"
+    }
+  ]
+}
