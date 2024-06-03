@@ -15,31 +15,34 @@ import './PopularProducts.css'
 //react toastify3
 import {  toast } from 'react-toastify';
 
-import { useDispatch } from 'react-redux';
+import { useDispatch ,useSelector } from 'react-redux';
 
 import { Add , ADDWISH } from '../Redux/Actions/action'
 
-function Commoncard({ id, firstProductImg, secondeProductImg, productName, Price }) {
+function Commoncard({ id, firstProductImg, secondeProductImg, productName, Price,quantity}) {
 
     // const 
 
     const navigate = useNavigate();
 
-    const product ={firstProductImg,secondeProductImg,productName,Price,id}
+    const product ={firstProductImg,secondeProductImg,productName,Price,id,quantity}
 
     const dispatch = useDispatch()
+
+    const data = useSelector((state) => state.cartreducer.carts)
+    const data2 = useSelector((state) => state.cartreducer.Wishlist)
 
     const addcart = (e) =>{
         // console.log("hello");
         dispatch(Add(e))
-        toast.success("This is item  added to cart");
+        let find = data.findIndex(item => item.id === e.id);
+        find === -1 ?  toast.success("This is item  added to cart"):  toast.error("This item is alredy in the cart");
     }
    const wishadd =(e)=>{
     dispatch(ADDWISH(e))
-    // toast.success("This is item  added to Wishlist");
+    let find = data2.findIndex(item => item.id === e.id);
+    find === -1 ?  toast.success("This item is added to Wishlist"):  toast.error("This item is alredy in the Wishlist");
    }
-
-    // const notify = () => toast("Wow so easy!");
 
     return (
         <div id='PRODUCTCARD' className='ProductCard w-[19rem] h-[26rem]'>

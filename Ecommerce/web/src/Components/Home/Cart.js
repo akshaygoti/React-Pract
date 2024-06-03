@@ -1,34 +1,23 @@
 import React from 'react'
 
-// import { useNavigate } from 'react-router-dom';
-
-// import { Remove } from '../Redux/Actions/action';
-
 import '../Home/Cart.css'
-
-// import breadcrumb01 from '../../Assets/breadcrumb01.jpg'
-// import product5 from '../../Assets/product5.jpg'
 
 import bgimg from '../asset/breadcrumb-01.jpg'
 
-// import pr5 from '../asset/product-6.jpg'
-
-// import Products10 from '../asset/product-10.jpg';
-
-// import Products9 from '../asset/product-14.jpg'
-
-// import Products11 from '../asset/product-11.jpg'
-
 import { IoRemoveOutline } from "react-icons/io5";
 
-import { useDispatch, useSelector} from 'react-redux';
-import { Remove_Add  } from '../Redux/Actions/action';
+import { useDispatch, useSelector } from 'react-redux';
+import { Remove_Add } from '../Redux/Actions/action';
+import { IoMdArrowDropup } from "react-icons/io";
+import { IoMdArrowDropdown } from "react-icons/io";
+
+import { Incr_To_cart, Decr_To_cart} from '../Redux/Actions/action';
 
 const Cart = () => {
 
     const dispatch = useDispatch();
     const Remove_Cart = (id) => {
-        dispatch(Remove_Add (id))
+        dispatch(Remove_Add(id))
         // console.log("HELLO DATA");
     }
 
@@ -37,7 +26,16 @@ const Cart = () => {
     // }
 
     const data = useSelector((state) => state.cartreducer.carts)
-    // console.log(data);
+    
+    const incriment_cart = (item) => {
+        dispatch(Incr_To_cart(item))
+        // console.log("incrtiment");
+    }
+
+    const dicrement_cart = (item) =>{
+        dispatch(Decr_To_cart(item))
+        console.log("incrtiment");
+    }
 
     return (
         <div>
@@ -66,13 +64,14 @@ const Cart = () => {
                                     <th>Quantity</th>
                                     <th>Total</th>
                                     <th>Add To Cart</th>
+                                    <th>Total</th>
                                     <th>Remove</th>
                                 </tr>
                             </thead>
 
                             <tbody className='text-center'>
                                 {data.map((item, ind) => {
-                                    let { id, firstProductImg, productName, Price } = item
+                                    let { id, firstProductImg, productName, Price, quantity } = item
                                     return (
                                         <tr key={ind} className='cart-item'>
                                             <td className=''>
@@ -85,13 +84,26 @@ const Cart = () => {
                                             </td>
                                             <td>{Price}</td>
                                             <td className=''>
-                                                <input type="number" min={1} defaultValue={1} name='qty' className='qty' />
+                                                <div className='input flex items-center justify-between border px-2'>
+                                                    <div className='flex items-center justify-between'>
+                                                        <div className='input-text'>
+                                                            <p>{quantity}</p>
+                                                        </div>
+                                                        <div className='input-btn flex flex-col'>
+                                                            <button onClick={()=>incriment_cart(item)}><IoMdArrowDropup /></button>
+                                                            <button onCanPlay={()=>dicrement_cart(item)}><IoMdArrowDropdown /></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {/* <input type="number" min={1} defaultValue={1} name='qty' className='qty' /> */}
+                                                {/* <button onClick={()=>incr_qut(item)} className='flex '></button> */}
                                             </td>
                                             <td>{Price}</td>
                                             <td>
                                                 <button className='tp-btn'>Add To Cart</button>
                                             </td>
-                                            <td>
+                                            <td className='prioec'>$(Price*quantity)</td>
+                                            <td>       
                                                 <button onClick={() => Remove_Cart(id)}>Remove</button>
                                             </td>
                                         </tr>

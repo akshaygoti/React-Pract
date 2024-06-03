@@ -25,3 +25,17 @@ export const Remove_Wishlist = (id)=>{
         payload:id
     }
 }
+
+export const Incr_To_cart = (item) =>{
+    return{
+        type:"INCRIMENT_TO_COUNT",
+        payload:item
+    }
+}
+
+export const Decr_To_cart = (item) =>{
+    return{
+        type:"DECREMENT_TO_COUNT",
+        payload:item
+    }
+}

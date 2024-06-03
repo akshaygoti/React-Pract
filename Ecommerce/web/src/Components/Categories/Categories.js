@@ -1,12 +1,12 @@
 import React from 'react'
 import './Catagories.css'
 
-import { FaShoePrints } from "react-icons/fa";
-import { RiFlowerLine } from "react-icons/ri";
-import { CiFaceSmile } from "react-icons/ci";
-import { FaRegFutbol } from "react-icons/fa";
-import { RiVipCrown2Line } from "react-icons/ri";
-import { GoGift } from "react-icons/go";
+// import { FaShoePrints } from "react-icons/fa";
+// import { RiFlowerLine } from "react-icons/ri";
+// import { CiFaceSmile } from "react-icons/ci";
+// import { FaRegFutbol } from "react-icons/fa";
+// import { RiVipCrown2Line } from "react-icons/ri";
+// import { GoGift } from "react-icons/go";
 
 
 

@@ -26,70 +26,80 @@ const PopularData = [
         img : product1,
         img2 : product2,
         title : "Bradley Burgess 2",
-        rate : "$20.00"
+        rate : "$20.00",
+        quantity:1
     },
     {
         id : 2,
         img : product3,
         img2 : product4,
         title : "Allie Sharp",
-        rate : "$30.00"
+        rate : "$30.00",
+        quantity:1
     },
     {
         id : 3,
         img : product5,
         img2 : product6,
         title : "Nathaniel Baldwin",
-        rate : "$40.00"
+        rate : "$40.00",
+        quantity:1
     },
     {
         id : 4,
         img : product7,
         img2 : product8,
         title : "Effie Rios",
-        rate : "$40.00"
+        rate : "$40.00",
+        quantity:1
     },
     {
         id : 5,
         img : product9,
         img2 : product10,
         title : "Carolyn Goodwin",
-        rate : "$50.00"
+        rate : "$50.00",
+        quantity:1
     },
     {
         id : 6,
         img : product11,
         img2 : product12,
         title : "Evelyn Patton",
-        rate : "$60.00"
+        rate : "$60.00",
+        quantity:1
     },
     {
         id : 7,
         img : product13,
         img2 : product14,
         title : "Sally Ray",
-        rate : "$70.00"
+        rate : "$70.00",
+        quantity:1
     },
     {
         id : 8,
         img : product15,
         img2 : product16,
         title : "Ora Bowman",
-        rate : "$80.00"
+        rate : "$80.00",
+        quantity:1
     },
     {
         id : 9,
         img : product17,
         img2 : product18,
         title : "Frederick Valdez",
-        rate : "$90.00"
+        rate : "$90.00",
+        quantity:1
     },
     {
         id : 10,
         img : product19,
         img2 : product20,
         title : "Terry Byrd",
-        rate : "$100.00"
+        rate : "$100.00",
+        quantity:1
     },
 ]
 

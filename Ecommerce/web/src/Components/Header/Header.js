@@ -72,20 +72,16 @@ const Header = () => {
             <div className='icons flex'>
 
               <button onClick={() => navigate("/Cart")} className='icon01 text-xl  mx-3'>
-                {/* <i class="fa-solid fa-cart-shopping"></i> */}
-                <AiOutlineShoppingCart onClick={()=>navigate("/Cart")} className='h-10 w-7' />
+                <AiOutlineShoppingCart onClick={() => navigate("/Cart")} className='h-10 w-7' />
                 <span className='red0'>{data.length}</span>
               </button>
-              <button  className='icon01 text-xl  mx-3'>
-                {/* <i class="fa-regular fa-user"></i> */}
+              <button className='icon01 text-xl  mx-3'>
                 <FaRegUser />
               </button>
               <button className='icon01 text-xl  mx-3'>
-                {/* <i class="fa-regular fa-heart"></i> */}
                 <CiHeart onClick={() => navigate("/Wishlist")} className='h-10 w-7' />
                 <span className='red0'>{data2.length}</span>
               </button>
-
             </div>
           </div>
         </div>

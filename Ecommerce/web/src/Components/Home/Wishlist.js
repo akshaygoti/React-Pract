@@ -4,10 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 import '../Home/Wishlist.css'
 
-// import breadcrumb01 from '../../Assets/breadcrumb01.jpg'
-// import product5 from '../../Assets/product5.jpg'
 import bgimg from '../asset/breadcrumb-01.jpg'
-// import pr5 from '../asset/product-6.jpg'
 
 import { IoRemoveOutline } from "react-icons/io5";
 
@@ -111,6 +108,7 @@ const Wishlist = () => {
                                     </td>
                                 </tr>
                             </tbody> */}
+
                         </table>
                     </div>
                 </div>

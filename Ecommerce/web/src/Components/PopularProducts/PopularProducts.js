@@ -48,7 +48,7 @@ const PopularProducts = () => {
                             {PopularData.map((cvalue, index, array) => {
                                 const product = { cvalue };
                                 return (
-                                    <Commoncard key={index} id={cvalue.id} firstProductImg={cvalue.img} secondeProductImg={cvalue.img2} productName={cvalue.title} Price={cvalue.rate} />
+                                    <Commoncard key={index} id={cvalue.id} firstProductImg={cvalue.img} secondeProductImg={cvalue.img2} productName={cvalue.title} Price={cvalue.rate} quantity={cvalue.quantity} />
                                 )
                             })}
                         </div>
