@@ -1,46 +1,39 @@
 {
   "people": [
     {
-      "id": "3f84",
-      "firstname": "Avish",
-      "lastname": "Yadav",
-      "age": "26",
-      "city": "Delhi"
-    },
-    {
-      "id": "41d2",
-      "firstname": "Akshay",
-      "lastname": "Goti",
+      "id": "5ffc",
+      "firstname": "akshay",
+      "lastname": "abhi",
       "age": "19",
-      "city": "Gujarat"
+      "city": "surat"
     },
     {
-      "id": "7286",
-      "firstname": "Sahil",
-      "lastname": "Dughat",
-      "age": "23",
-      "city": "USA"
+      "id": "bbf1",
+      "firstname": "babitaben",
+      "lastname": "ayer",
+      "age": "38",
+      "city": "mumbai"
     },
     {
-      "id": "3e44",
-      "firstname": "Smit",
-      "lastname": "Kareliya",
-      "age": "19",
-      "city": "Mlicom"
-    },
-    {
-      "id": "3c6e",
-      "firstname": "Jayan",
-      "lastname": "Chikago",
-      "age": "25",
-      "city": "Syamgham"
-    },
-    {
-      "id": "1597",
-      "firstname": "Nikhil",
-      "lastname": "Ahir",
-      "age": "26",
+      "id": "19ba",
+      "firstname": "bhide",
+      "lastname": "madhavi",
+      "age": "42",
       "city": "Mumbai"
+    },
+    {
+      "id": "84c8",
+      "firstname": "sodhi",
+      "lastname": "roshan",
+      "age": "36",
+      "city": "mp"
+    },
+    {
+      "id": "4b5f",
+      "firstname": "jethalal",
+      "lastname": "tapu",
+      "age": "42",
+      "city": "suart"
     }
   ]
 }

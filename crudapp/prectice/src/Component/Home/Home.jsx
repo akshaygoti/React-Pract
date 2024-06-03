@@ -4,12 +4,10 @@ import { useState } from 'react';
 import axios from "axios";
 import {Link} from 'react-router-dom'
 
-
-
  function Home() {
   const [people,setpeople]=useState([]);
 
-  const loadUser = async()=>{
+  const loadUser = async()=>{ 
     const res = await axios.get("http://localhost:3002/people")
     console.log(res.data,"res");
     setpeople(res.data)
@@ -111,7 +109,7 @@ import {Link} from 'react-router-dom'
                         </td>
                         <td className="whitespace-nowrap px-4 space-x-2 py-4 text-right text-sm font-medium">
                           <button>
-                          <Link to="/editpage" className="text-gray-500 hover:text-indigo-600">
+                          <Link to={`/editpage/${value.id}`}className="text-gray-500 hover:text-indigo-600">
                             Edit
                           </Link>
                           </button>

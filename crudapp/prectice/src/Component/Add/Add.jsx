@@ -4,6 +4,7 @@ import { useState } from "react";
 import axios from "axios";
 
 function Add() {
+  
   const navigate = useNavigate();
   const [student, setStudent] = useState({
     firstname: "",

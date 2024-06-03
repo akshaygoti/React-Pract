@@ -35,14 +35,14 @@ function Navbar() {
             Register
           </Link>
         </li>
-        <li>
+        {/* <li>
           <Link
             to="/edit"
             class="text-lg font-simbold  text-black hover:text-white"
           >
             Edit
           </Link>
-        </li>
+        </li> */}
         <li>
           <Link
             to="/Credit"
@@ -54,12 +54,12 @@ function Navbar() {
       </ul>
     </div>
     <div class="hidden lg:block">
-      <button
+      {/* <button
         type="button"
         class="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
       >
        Open
-      </button>
+      </button> */}
     </div>
   </div>
 </div>

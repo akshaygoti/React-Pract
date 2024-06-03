@@ -1,18 +1,80 @@
-import React from 'react'
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast, Bounce } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
- function Register() {
+function Register() {
+  function show_Error() {
+    toast.success("Your is Details success", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      transition: Bounce,
+    });
+  }
+
+  function showAler() {
+    toast.error("🦄 Wow so easy!", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      transition: Bounce,
+    });
+  }
+
+  const navigate = useNavigate();
+  const [fname, setFname] = useState();
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+
+  function onSubmitRegister(e) {
+    e.preventDefault();
+    if (!fname || !email || !password) {
+      showAler();
+    } else {
+      localStorage.setItem("Firstname", fname);
+      localStorage.setItem("Email", email);
+      localStorage.setItem("Password", password);
+      show_Error();
+      setTimeout(() => {
+        navigate("/login");
+      }, 2000);
+    }
+  }
+
   return (
     <section>
+      <ToastContainer />
       <div className="grid grid-cols-1 lg:grid-cols-2">
         <div className="flex items-center justify-center px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
           <div className="xl:mx-auto xl:w-full xl:max-w-sm 2xl:max-w-md">
-            <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl">Register</h2>
-            <form action="#" method="POST" className="mt-8">
+            <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl">
+              Register
+            </h2>
+            <form
+              onSubmit={onSubmitRegister}
+              action="#"
+              method="POST"
+              className="mt-8"
+            >
               <div className="space-y-5">
                 <div>
-                  <label htmlFor="name" className="text-base font-medium text-gray-900">
-                    {' '}
-                    Full Name{' '}
+                  <label
+                    htmlFor="name"
+                    className="text-base font-medium text-gray-900"
+                  >
+                    {" "}
+                    Full Name{" "}
                   </label>
                   <div className="mt-2">
                     <input
@@ -20,13 +82,17 @@ import React from 'react'
                       type="text"
                       placeholder="Full Name"
                       id="name"
+                      onChange={(e) => setFname(e.target.value)}
                     ></input>
                   </div>
                 </div>
                 <div>
-                  <label htmlFor="email" className="text-base font-medium text-gray-900">
-                    {' '}
-                    Email address{' '}
+                  <label
+                    htmlFor="email"
+                    className="text-base font-medium text-gray-900"
+                  >
+                    {" "}
+                    Email address{" "}
                   </label>
                   <div className="mt-2">
                     <input
@@ -34,14 +100,19 @@ import React from 'react'
                       type="email"
                       placeholder="Email"
                       id="email"
+                      name="email"
+                      onChange={(e) => setEmail(e.target.value)}
                     ></input>
                   </div>
                 </div>
                 <div>
                   <div className="flex items-center justify-between">
-                    <label htmlFor="password" className="text-base font-medium text-gray-900">
-                      {' '}
-                      Password{' '}
+                    <label
+                      htmlFor="password"
+                      className="text-base font-medium text-gray-900"
+                    >
+                      {" "}
+                      Password{" "}
                     </label>
                   </div>
                   <div className="mt-2">
@@ -50,15 +121,17 @@ import React from 'react'
                       type="password"
                       placeholder="Password"
                       id="password"
+                      name="password"
+                      onChange={(e) => setPassword(e.target.value)}
                     ></input>
                   </div>
                 </div>
                 <div>
                   <button
-                    type="button"
+                    type="submit"
                     className="inline-flex w-full items-center justify-center rounded-md bg-black px-3.5 py-2.5 font-semibold leading-7 text-white hover:bg-black/80"
                   >
-                    Create Account 
+                    Create Account
                   </button>
                 </div>
               </div>
@@ -108,7 +181,7 @@ import React from 'react'
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 export default Register;
