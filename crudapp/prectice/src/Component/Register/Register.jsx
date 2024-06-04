@@ -5,7 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 function Register() {
   function show_Error() {
-    toast.success("Your is Details success", {
+    toast.success("Success", {
       position: "top-right",
       autoClose: 5000,
       hideProgressBar: false,
@@ -19,7 +19,7 @@ function Register() {
   }
 
   function showAler() {
-    toast.error("🦄 Wow so easy!", {
+    toast.error("Your is Details Not success ", {
       position: "top-right",
       autoClose: 5000,
       hideProgressBar: false,

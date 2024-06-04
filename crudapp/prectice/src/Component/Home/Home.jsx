@@ -5,7 +5,7 @@ import axios from "axios";
 import {Link} from 'react-router-dom'
 
  function Home() {
-  const [people,setpeople]=useState([]);
+  const [data,setpeople]=useState([]);
 
   const loadUser = async()=>{ 
     const res = await axios.get("http://localhost:3002/people")
@@ -27,7 +27,36 @@ import {Link} from 'react-router-dom'
       console.log(error,"error");
     })
   }
-  
+
+  // pagination
+  const [page,setpage] = useState(1);
+  const [itemsPerPage,setItemsPerPage] = useState(2);
+  const dataPerPage = itemsPerPage;
+  const totalItems = data.length;
+  const totalPages = Math.ceil(totalItems / dataPerPage);
+
+  // pagination handlers
+  const handlePrevious = () =>{
+    setpage(prevPage => Math.max(prevPage - 1,1));
+  }
+
+  const handleNext = () =>{ 
+    setpage(prevPage => Math.min(prevPage+1,totalPages))
+   }
+
+   const handlePageClick = (pageNumber) => {
+    setpage(pageNumber);
+  };
+
+   const handleItemsPerPageChange =(event) => {
+    const value = parseInt(event.target.value);
+    setItemsPerPage(value);
+    setpage(1);
+   }
+
+   const indexOfLastItem = page * itemsPerPage;
+   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+   const currentData = data.slice(indexOfFirstItem,indexOfLastItem)
   return (
     <>
     {/* <Navbar/> */}
@@ -78,7 +107,7 @@ import {Link} from 'react-router-dom'
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-200 bg-white">
-                    {people.map((value) => (
+                    {currentData.map((value, index) => (
                       <tr key={value.id} className="divide-x divide-gray-200">
                         <td className="whitespace-nowrap px-4 py-4">
                           <div className="flex items-center">
@@ -88,6 +117,7 @@ import {Link} from 'react-router-dom'
                                 src="https://www.logo.wine/a/logo/React_(web_framework)/React_(web_framework)-Logo.wine.svg"
                                 alt=""
                               />
+                              {indexOfFirstItem + index + 1}
                             </div>
                             <div className="ml-4">
                               <div className="text-sm font-medium text-gray-900">{value.firstname}</div>
@@ -126,23 +156,20 @@ import {Link} from 'react-router-dom'
               </div>
             </div>
           </div>
-        </div>
-        <div className="mt-4 w-full border-gray-300">
-          <div className="mt-2 flex items-center justify-end">
-            <div className="space-x-2">
-              <button
-                type="button"
-                className="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-              >
-                &larr; Previous
-              </button>
-              <button
-                type="button"
-                className="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-              >
-                Next &rarr;
-              </button>
-            </div>
+                    {/* Pagination */}
+                    <div className="flex my-4 mx-4">
+            <button onClick={handlePrevious} disabled={page === 1} className="flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 mr-2">Previous</button>
+            {Array.from({ length: totalPages }, (_, index) => (
+              <button key={index + 1} onClick={() => handlePageClick(index + 1)} className={`inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 mr-2 ${page === index + 1 ? 'active-link' : ''}`}>{index + 1}</button>
+            ))}
+            <button onClick={handleNext} className="inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100">Next</button>
+            {/* <select className='border border-gray-300 rounded-lg mx-2 text-center' onChange={handleItemsPerPageChange} value={itemsPerPage}>
+              <option value={1}>1</option>
+              <option value={2}>2</option>
+              <option value={3}>3</option>
+              <option value={4}>4</option>
+              <option value={5}>5</option>
+            </select> */}
           </div>
         </div>
       </section>
